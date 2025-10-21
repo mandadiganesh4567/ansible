@@ -1,0 +1,6 @@
+- name: Printing file name
+  hosts: web
+  - tasks:
+    - name: Printing group of servers
+      ansible.builting.debug:
+       msg: " This is ansible playbook"
