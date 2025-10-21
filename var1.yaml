@@ -15,5 +15,6 @@
    - name: merging two lists
      ansible.builtin.set_fact:
       merged_list: ( list1+ list2)
+     ansible.builtin.debug:
       msg: "merged list {{merged_list}}"
        
