@@ -1,11 +1,11 @@
-# - name: Installing Ngnix
-#   hosts: web
-#   become: yes
-#   tasks:
-#   - name: Install Ngnix
-#     ansible.builtin.package:
-#       name: ngnix
-#       state: present
+- name: Installing Ngnix
+  hosts: web
+  become: yes
+  tasks:
+  - name: Install Ngnix
+    ansible.builtin.package:
+      name: mysql
+      state: present
 
 - name: Installing Nginx
   hosts: web
