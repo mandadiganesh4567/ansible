@@ -17,4 +17,4 @@
     - name: checking user
       ansible.builtin.command: id expense
       register: USER
-      ignore_error:
+      ignore_errors: True
