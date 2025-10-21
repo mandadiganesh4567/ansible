@@ -1,0 +1,7 @@
+- name: Variables
+  hosts: web
+  vars: Name: "Ganesh"
+  tasks:
+  - name: Printing names using Variables
+    ansibe.builtin.debug:
+     msg: "Hello {{Namre}}"
