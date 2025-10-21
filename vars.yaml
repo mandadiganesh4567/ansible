@@ -1,16 +1,3 @@
-# - name: Variables
-#   hosts: web
-#   vars:
-#       pName: "Ganesh"
-#       pGoal: "job switch to devops"
-#       pCourse: "next month 15"
-#   tasks:
-#   - name: Printing names using Variables
-#     ansible.builtin.debug:
-#      msg: "Hello {{pName}} and my goal is {{pGoal}} in {{pCourse}}"
-#   - name: printing names again
-#     ansible.builtin.debug:
-#      msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
 ---
 - name: Variables
   hosts: web
@@ -19,11 +6,13 @@
     P_Goal: "job switch to devops"
     P_Course: "next month 15"
   tasks:
+    # ----------------------------------------------------
+    # Task 1 must start at the same column as Task 2
+    # ----------------------------------------------------
     - name: Printing names using Playbook Variables (Succeeds)
       ansible.builtin.debug:
         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
 
-    # Ensure this task starts at the same column as the task above
     - name: printing names again (Should now use Inventory Vars)
       ansible.builtin.debug:
         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
