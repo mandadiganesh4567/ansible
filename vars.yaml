@@ -11,18 +11,20 @@
 #   - name: printing names again
 #     ansible.builtin.debug:
 #      msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
-- name: Bairables
+---
+- name: Variables # Corrected name
   hosts: web
   vars:
-      P_Name: "Ganesh"
-      P_Goal: "job switch to devops"
-      P_Course: "next month 15"
+    # Ensure variables are indented exactly two spaces from 'vars:'
+    P_Name: "Ganesh"
+    P_Goal: "job switch to devops"
+    P_Course: "next month 15"
   tasks:
     - name: Printing names using Playbook Variables (Succeeds)
       ansible.builtin.debug:
+        # Ensure 'msg' is indented exactly two spaces from 'ansible.builtin.debug:'
         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
 
     - name: printing names again (Should now use Inventory Vars)
       ansible.builtin.debug:
-        # Accessing Inventory variables directly
         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
