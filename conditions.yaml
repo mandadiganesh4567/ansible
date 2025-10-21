@@ -9,14 +9,14 @@
   - name: print number print its grater than 69
     ansible.builtin.debug:
      msg: "The number {{number}} is gerater that 69"
-    when: "{{ number }}" > 69
+    when: number  > 69
   - name:  print if its equal
     ansible.builtin.debug:
      msg: "The number {{number}} is equal to 69"
-    when: "{{ number }}" == 69
+    when: number == 69
 
   - name: print number print its less than 69
     ansible.builtin.debug:
      msg: "The number {{number}} is lessr that 69"
-    when: "{{ number }}" < 69
+    when: number  < 69
   
