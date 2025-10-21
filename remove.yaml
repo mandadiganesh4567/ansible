@@ -14,4 +14,3 @@
      ansible.builtin.package:
        name: nginx
        state: absent
-       msg: " Fuck you ansible"
