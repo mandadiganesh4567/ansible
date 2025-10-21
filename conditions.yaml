@@ -1,49 +1,8 @@
-# - name: checking nummber condition 
-#   hosts: local
-#   connection: local
-#   vars_prompt:
-#     - name: nummber
-#   tasks:
-#   - name: nummber
-#     prompt: please enter nummber
-#     private: false
-#   - name: print number print its grater than 69
-#     ansible.builtin.debug:
-#      msg: "The number {{number}} is gerater that 69"
-#     when: number  > 69
-#   - name:  print if its equal
-#     ansible.builtin.debug:
-#      msg: "The number {{number}} is equal to 69"
-#     when: number == 69
-
-#   - name: print number print its less than 69
-#     ansible.builtin.debug:
-#      msg: "The number {{number}} is lessr that 69"
-#     when: number  < 69
-
-- name: checking number condition
-  hosts: localhost  # CRITICAL FIX: Change 'localhosts' to 'localhost' or 'local'
-  connection: local
-  
-  # ... (rest of your playbook)
-  vars_prompt:
-    - name: number # <--- Define the variable name
-      prompt: please enter number
-      private: false
+- name: creating user with error handling
+  hosts: web
+  become: yes
   tasks:
-    # No standalone prompt task is needed here.
-
-    - name: print number print its grater than 69
-      ansible.builtin.debug:
-        msg: "The number {{ number }} is gerater that 69"
-      when: number | int > 69 # Use the 'int' filter for comparison
-
-    - name: print if its equal
-      ansible.builtin.debug:
-        msg: "The number {{ number }} is equal to 69"
-      when: number | int == 69
-
-    - name: print number print its less than 69
-      ansible.builtin.debug:
-        msg: "The number {{ number }} is lessr that 69"
-      when: number | int < 69
+  - name: checking user status
+    ansible.builyin.command: id expense
+    registors: USER
+    
