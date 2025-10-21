@@ -18,3 +18,7 @@
       ansible.builtin.command: id expense
       register: USER
       ignore_errors: True
+    - name: create user
+      ansible.builtin.command: useradd expense
+      when: USER.rc ! = 0
+      
