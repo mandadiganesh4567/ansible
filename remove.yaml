@@ -14,3 +14,12 @@
      ansible.builtin.package:
        name: nginx
        state: absent
+   - name: Installing Ngnix
+     ansible.builtin.package:
+       name: nginx
+       state: present
+
+   - name: Run the nginx
+     ansible.builtin.service:
+       name: nginx
+       state: started
