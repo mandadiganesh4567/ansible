@@ -1,5 +1,24 @@
+# ---
+# - name: Variables
+#   hosts: web
+#   vars:
+#     P_Name: "Ganesh"
+#     P_Goal: "job switch to devops"
+#     P_Course: "next month 15"
+#   tasks:
+#     - name: Printing names using Playbook Variables
+#       ansible.builtin.debug:
+#         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
+# - name: Variables
+#   hosts: web
+#   vars:
+#     tasks:
+#     # CRITICAL: This hyphen must align exactly with the hyphen above.
+#     - name: printing names again (Should now use Inventory Vars)
+#       ansible.builtin.debug:
+#         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
 ---
-- name: Variables
+- name: Variable Mix Demonstration
   hosts: web
   vars:
     P_Name: "Ganesh"
@@ -9,11 +28,7 @@
     - name: Printing names using Playbook Variables
       ansible.builtin.debug:
         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
-- name: Variables
-  hosts: web
-  vars:
-    tasks:
-    # CRITICAL: This hyphen must align exactly with the hyphen above.
+
     - name: printing names again (Should now use Inventory Vars)
       ansible.builtin.debug:
         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
