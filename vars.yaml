@@ -1,7 +1,9 @@
 - name: Variables
   hosts: web
-  vars: Name: "Ganesh"
+  vars:
+   Name: "Ganesh"
+   Goal: "job switch to devops"
   tasks:
   - name: Printing names using Variables
-    ansibe.builtin.debug:
-     msg: "Hello {{Namre}}"
+    ansible.builtin.debug:
+     msg: "Hello {{Namre}} and my goal is {{Goal}}"
