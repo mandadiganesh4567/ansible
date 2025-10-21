@@ -22,7 +22,7 @@
 #     when: number  < 69
 ---
 - name: checking number condition
-  hosts: local
+  hosts: localhosts
   connection: local
   # CRITICAL FIX: The variable definition must be here.
   vars_prompt:
