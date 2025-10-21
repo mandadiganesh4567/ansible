@@ -15,5 +15,5 @@
   become: yes
   tasks:
     - name: checking user
-      ansible.debug.command: id expense
+      ansible.builtin.command: id expense
       register: USER
