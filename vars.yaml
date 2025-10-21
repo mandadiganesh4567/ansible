@@ -1,6 +1,6 @@
 ---
 - name: Variables
-  hosts: web
+  hosts: web:vars
   vars:
     P_Name: "Ganesh"
     P_Goal: "job switch to devops"
@@ -9,9 +9,7 @@
     - name: Printing names using Playbook Variables
       ansible.builtin.debug:
         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
-- name: Variables
-  hosts: vars
-  tasks:
+
     # CRITICAL: This hyphen must align exactly with the hyphen above.
     - name: printing names again (Should now use Inventory Vars)
       ansible.builtin.debug:
