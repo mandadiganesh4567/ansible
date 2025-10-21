@@ -1,23 +1,48 @@
-- name: checking nummber condition 
+# - name: checking nummber condition 
+#   hosts: local
+#   connection: local
+#   vars_prompt:
+#     - name: nummber
+#   tasks:
+#   - name: nummber
+#     prompt: please enter nummber
+#     private: false
+#   - name: print number print its grater than 69
+#     ansible.builtin.debug:
+#      msg: "The number {{number}} is gerater that 69"
+#     when: number  > 69
+#   - name:  print if its equal
+#     ansible.builtin.debug:
+#      msg: "The number {{number}} is equal to 69"
+#     when: number == 69
+
+#   - name: print number print its less than 69
+#     ansible.builtin.debug:
+#      msg: "The number {{number}} is lessr that 69"
+#     when: number  < 69
+---
+- name: checking number condition
   hosts: local
   connection: local
+  # CRITICAL FIX: The variable definition must be here.
   vars_prompt:
-    - name: nummber
+    - name: number # <--- Define the variable name
+      prompt: please enter number
+      private: false
   tasks:
-  - name: nummber
-    prompt: please enter nummber
-    private: false
-  - name: print number print its grater than 69
-    ansible.builtin.debug:
-     msg: "The number {{number}} is gerater that 69"
-    when: number  > 69
-  - name:  print if its equal
-    ansible.builtin.debug:
-     msg: "The number {{number}} is equal to 69"
-    when: number == 69
+    # No standalone prompt task is needed here.
 
-  - name: print number print its less than 69
-    ansible.builtin.debug:
-     msg: "The number {{number}} is lessr that 69"
-    when: number  < 69
-  
+    - name: print number print its grater than 69
+      ansible.builtin.debug:
+        msg: "The number {{ number }} is gerater that 69"
+      when: number | int > 69 # Use the 'int' filter for comparison
+
+    - name: print if its equal
+      ansible.builtin.debug:
+        msg: "The number {{ number }} is equal to 69"
+      when: number | int == 69
+
+    - name: print number print its less than 69
+      ansible.builtin.debug:
+        msg: "The number {{ number }} is lessr that 69"
+      when: number | int < 69
