@@ -2,5 +2,5 @@
   hosts: web
   tasks:
     - name: Printing group of servers
-      ansible.builting.debug:
+      ansible.builtin.debug:
        msg: " This is ansible playbook"
