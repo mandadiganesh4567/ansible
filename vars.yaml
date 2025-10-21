@@ -1,5 +1,5 @@
 - name: Variables
-  hosts: web
+  hosts: NAMES
   vars:
       pName: "Ganesh"
       pGoal: "job switch to devops"
@@ -9,6 +9,5 @@
     ansible.builtin.debug:
      msg: "Hello {{pName}} and my goal is {{pGoal}} in {{pCourse}}"
   - name: printing names again
-
     ansible.builtin.debug:
      msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
