@@ -1,5 +1,6 @@
 - name: Removing packages
   hosts: web
+  become: yes
   tasks:
    - name: Removing mysql
      ansible.builtin.package:
