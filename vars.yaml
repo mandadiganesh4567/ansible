@@ -8,7 +8,7 @@
   - name: Printing names using Variables
     ansible.builtin.debug:
      msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
-  tasks:
+     
   - name: printing names again
     hosts: vars
     ansible.builtin.debug:
