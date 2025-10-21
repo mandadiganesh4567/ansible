@@ -18,7 +18,8 @@
 #       ansible.builtin.debug:
 #         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
 ---
-- name: Variable Mix Demonstration
+# === FIRST PLAY: Uses Playbook Vars ===
+- name: Playbook Variables Demo
   hosts: web
   vars:
     P_Name: "Ganesh"
@@ -29,6 +30,13 @@
       ansible.builtin.debug:
         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
 
+---
+# === SECOND PLAY: Uses Inventory Vars ===
+- name: Inventory Variables Demo
+  hosts: web
+  # No 'vars' block needed here since it uses inventory variables
+  tasks:
     - name: printing names again (Should now use Inventory Vars)
       ansible.builtin.debug:
+        # These variables (Name, Goal, Course) must be defined in inventory.ini
         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
