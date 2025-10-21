@@ -3,6 +3,6 @@
   become: yes
   tasks:
    - name: checking user status
-     ansible.builyin.command: id expense
+     ansible.builtin.command: id expense
      registors: USER
     
