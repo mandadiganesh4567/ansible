@@ -5,6 +5,9 @@
      ansible.builtin.package:
        name: mysql
        state: absent
+- name: Removing packages
+  hosts: web
+  tasks:
    - name: REMOVING nginx
      ansible.builtin.pacakge:
        name: nginx
