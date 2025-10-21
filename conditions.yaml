@@ -2,6 +2,7 @@
   hosts: local
   connection: local
   vars_prompt:
+    - name: nummber
   tasks:
   - name: nummber
     prompt: please enter nummber
