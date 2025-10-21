@@ -30,7 +30,7 @@
       ansible.builtin.debug:
         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
 
----
+
 # === SECOND PLAY: Uses Inventory Vars ===
 - name: Inventory Variables Demo
   hosts: web
