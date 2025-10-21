@@ -1,0 +1,17 @@
+- name: Working on Variables
+  hosts: web
+  vars:
+   list1:
+    - appale
+    - ball
+    - cat
+    - dog
+   list2:
+    - avacado
+    - banana
+    - carrot
+    - dumpling
+  tasks:
+   - name: merging two lists
+     ansible.builtin.set_fact:
+      merged_list: ( list1+ list2)
