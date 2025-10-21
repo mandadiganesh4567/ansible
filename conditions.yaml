@@ -1,5 +1,6 @@
 - name: checking nummber condition 
   hosts: local
+  connection: local
   vars_prompt:
   tasks:
   - name: nummber
