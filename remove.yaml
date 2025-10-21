@@ -1,0 +1,11 @@
+- name: Removing packages
+  hosts: web
+  tasks:
+   - name: Removing mysql
+     ansible.builtin.package:
+       name: mysql
+       state: absent
+   - name: REMOVING nginx
+     ansible.builting.packge:
+       name: nginx
+       state: absent
