@@ -2,11 +2,11 @@
   hosts: web
   become: yes
   vars_prompt:
-    - name: Cource
+    - name: Course
       prompt: please enter cource name
     - name: Goal
       prompt: please enter goal
   tasks:
    - name: printing var by using prompt
      ansible.builtin.debug:
-      msg: "Hi I'm learing {{Cource}} and my goal is  {{Goal}}"
+      msg: "Hi I'm learing {{Course}} and my goal is  {{Goal}}"
