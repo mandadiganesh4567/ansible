@@ -1,11 +1,19 @@
 
-- name: creating user with error handling
+# - name: creating user with error handling
+#   hosts: web
+#   become: yes
+#   tasks:
+#     - name: checking user status (Will fail if user 'expense' doesn't exist)
+#       # Using 'command' module to run the 'id' command
+#       ansible.builtin.command: id expense
+      
+#       # CRITICAL FIX: The parameter must be 'register'
+#       register: USER
+
+- name: checking user
   hosts: web
   become: yes
   tasks:
-    - name: checking user status (Will fail if user 'expense' doesn't exist)
-      # Using 'command' module to run the 'id' command
-      ansible.builtin.command: id expense
-      
-      # CRITICAL FIX: The parameter must be 'register'
+    - name: checking user
+      ansible.debug.command: id expense
       register: USER
