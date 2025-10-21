@@ -8,7 +8,7 @@
 - name: Removing packages
   hosts: web
   tasks:
-   - name: REMOVING nginx
-     ansible.builtin.pacakge:
-       name: nginx
-       state: absent
+    - name: REMOVING nginx
+      ansible.builtin.pacakge:
+        name: nginx
+        state: absent
