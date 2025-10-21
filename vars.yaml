@@ -1,42 +1,18 @@
-# ---
-# - name: Variables
-#   hosts: web
-#   vars:
-#     P_Name: "Ganesh"
-#     P_Goal: "job switch to devops"
-#     P_Course: "next month 15"
-#   tasks:
-#     - name: Printing names using Playbook Variables
-#       ansible.builtin.debug:
-#         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
-# - name: Variables
-#   hosts: web
-#   vars:
-#     tasks:
-#     # CRITICAL: This hyphen must align exactly with the hyphen above.
-#     - name: printing names again (Should now use Inventory Vars)
-#       ansible.builtin.debug:
-#         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
----
-# === FIRST PLAY: Uses Playbook Vars ===
-- name: Playbook Variables Demo
-  hosts: web
-  vars:
-    P_Name: "Ganesh"
-    P_Goal: "job switch to devops"
-    P_Course: "next month 15"
-  tasks:
-    - name: Printing names using Playbook Variables
-      ansible.builtin.debug:
+
+ - name: Variables
+   hosts: web
+   vars:
+     P_Name: "Ganesh"
+     P_Goal: "job switch to devops"
+     P_Course: "next month 15"
+   tasks:
+   - name: Printing names using Playbook Variables
+     ansible.builtin.debug:
         msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
+ - name: Variables
+   hosts: vars
+   tasks:
+   - name: printing names again (Should now use Inventory Vars)
+     ansible.builtin.debug:
+       msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
 
-
-# === SECOND PLAY: Uses Inventory Vars ===
-- name: Inventory Variables Demo
-  hosts: web
-  # No 'vars' block needed here since it uses inventory variables
-  tasks:
-    - name: printing names again (Should now use Inventory Vars)
-      ansible.builtin.debug:
-        # These variables (Name, Goal, Course) must be defined in inventory.ini
-        msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
