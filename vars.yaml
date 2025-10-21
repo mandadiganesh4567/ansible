@@ -20,3 +20,10 @@
      ansible.builtin.debug:
       msg: "Hello {{P_Name}} and my goal is {{P_Goal}} in {{P_Course}}"
 
+ - name: Variables
+   hosts: web
+   tasks:
+   - name: printing names again (Should now use Inventory Vars)
+     ansible.builtin.debug:
+       msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
+
