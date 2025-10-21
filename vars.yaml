@@ -2,7 +2,7 @@
  
  - name: Variables
    hosts: web
-   vars:
+   vars_files:
      - varfile.yaml
    tasks:
    - name: printing names again (Should now use Inventory Vars)
