@@ -1,8 +1,17 @@
-- name: Installing Ngnix
+# - name: Installing Ngnix
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: Install Ngnix
+#     ansible.builtin.package:
+#       name: ngnix
+#       state: present
+
+- name: Installing Nginx
   hosts: web
   become: yes
   tasks:
-  - name: Install Ngnix
-    ansible.builtin.package:
-      name: ngnix
-      state: present
+    - name: Ensure Nginx is installed
+      ansible.builtin.package:  # Use 'yum' for Red Hat-based systems
+        name: nginx        # Correct package name (nginx, no extra quotes)
+        state: present
