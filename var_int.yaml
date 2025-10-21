@@ -1,7 +1,15 @@
+# - name: Demo Inventory Vars
+#   hosts: web
+#   tasks:
+#     # Variables (Name, Goal, Course) must be defined in inventory.ini
+#     - name: printing names again (Should now use Inventory Vars)
+#       ansible.builtin.debug:
+#         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
+
+---
 - name: Demo Inventory Vars
   hosts: web
   tasks:
-    # Variables (Name, Goal, Course) must be defined in inventory.ini
-    - name: printing names again (Should now use Inventory Vars)
-      ansible.builtin.debug:
+   - name: printing names again (Should now use Inventory Vars)
+     ansible.builtin.debug:
         msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
