@@ -1,7 +1,9 @@
 
  
  - name: Variables
-   hosts: vars
+   hosts: web
+   vars:
+     - varfile.yaml
    tasks:
    - name: printing names again (Should now use Inventory Vars)
      ansible.builtin.debug:
