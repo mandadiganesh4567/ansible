@@ -4,6 +4,7 @@
   vars_prompt:
     - name: Course
       prompt: please enter cource name
+      private: false
     - name: Goal
       prompt: please enter goal
   tasks:
