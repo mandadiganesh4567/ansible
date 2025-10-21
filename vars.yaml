@@ -3,7 +3,8 @@
   vars:
    Name: "Ganesh"
    Goal: "job switch to devops"
+   Course: "next month 15"
   tasks:
   - name: Printing names using Variables
     ansible.builtin.debug:
-     msg: "Hello {{Name}} and my goal is {{Goal}}"
+     msg: "Hello {{Name}} and my goal is {{Goal}} in {{Course}}"
