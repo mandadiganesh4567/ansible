@@ -6,6 +6,6 @@
        name: mysql
        state: absent
    - name: REMOVING nginx
-     ansible.builting.packge:
+     ansible.builtin.pacakge:
        name: nginx
        state: absent
