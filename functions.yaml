@@ -1,0 +1,12 @@
+- name: Working on Functions
+  hosts: web
+  become: yes
+  tasks:
+    - name: prining default Functions
+      ansible.builtin.debug:
+        msg: "{{ name | default('fucking ansible') }}"
+    - name: Converting string to uppder case and lower case
+      vars:
+        name: " Hello Fucking Ansible"
+      ansible.builtin.debug:
+        msg: "upper case: {{ name | upper }}, lower caase: {{name| lower}}"
