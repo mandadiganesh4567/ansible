@@ -10,3 +10,9 @@
         name: " Hello Fucking Ansible"
       ansible.builtin.debug:
         msg: "upper case: {{ name | upper }}, lower caase: {{name| lower}}"
+
+    - name: Unique numbers in a list
+      vars:
+        num: [1,2,3,55,69,1,2,55]
+      ansible.builtin.debug:
+        msg: "unique number: {{ num | uniq }}"
