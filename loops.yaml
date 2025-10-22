@@ -12,7 +12,8 @@
       - deepseek
     - name: Installing packages
       ansible.builtin.package:
-       msg: " installing packages { item }"
+       name: {{ item }}
+       state: present
       loop:
       - nginx
       - mysql
