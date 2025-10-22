@@ -28,4 +28,4 @@
          duration: "today only"
          Trainer: "self"
       ansible.builtin.debug:
-        msg: " converting into list {{ Goal | dict2item }}"
+        msg: " converting into list {{ Goal | dict2items }}"
