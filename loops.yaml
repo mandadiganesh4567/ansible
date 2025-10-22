@@ -17,4 +17,13 @@
       loop:
       - nginx
       - mysql
+      - httpd
+    - name: Installing packages
+      ansible.builtin.package:
+       name: "{{ item }}"
+       state: absent
+      loop:
+      - nginx
+      - mysql
+      - httpd
       
