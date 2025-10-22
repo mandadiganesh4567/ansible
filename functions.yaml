@@ -21,3 +21,11 @@
         num2: [1,3,5,7,69]
       ansible.builtin.debug:
         msg: " min: {{ num2 | min }} , max: {{ num2 | max }}"
+    - name: converting dicectory to list
+      vars:
+        Goal:
+         course: "Ansible"
+         duration: "today only"
+         Trainer: "self"
+      ansible.builtin.debug:
+        msg: " converting into list {{ Goal | dict2item }}"
