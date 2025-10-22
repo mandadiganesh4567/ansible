@@ -5,8 +5,8 @@
     - name: Prinint list of names using Loops
       ansible.builtin.debug:
         msg: "Hello mother fucker {{ item }}
-      loops:
-       - chat gpt
-       - gemini
-       - copilot
-       - deepseek
+      loop:
+      - chat gpt
+      - gemini
+      - copilot
+      - deepseek
