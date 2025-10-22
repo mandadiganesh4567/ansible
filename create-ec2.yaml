@@ -1,6 +1,6 @@
 - name: Creating ec2 and route 53 records
   hosts: local
-  connection: local
+  connection: localhost
   vars: 
     subnet_id: "subnet-09e39b11650163b8e"
     sg_id: "sg-0f6fe82f3047a4bbe"
