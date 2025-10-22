@@ -16,3 +16,8 @@
         num: [1,2,3,55,69,1,2,55]
       ansible.builtin.debug:
         msg: "unique number: {{ num | unique }}"
+    - name: Printing min and max
+      vars:
+        num2: [1,3,5,7,69]
+      ansible.builtin.debug:
+        msg: " min: {{ num2 | min }} , max: {{ num2 | max }}"
