@@ -1,0 +1,14 @@
+- name: Installing Ngnix with correcrt distribution
+  hosts: web
+  become: yes
+  tasks:
+    - name: Installing Ngnix if os is redhat
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Redhat"
+    - name: Installing Ngnix if os is redhat
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Ubantu"
