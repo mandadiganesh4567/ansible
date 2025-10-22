@@ -1,0 +1,12 @@
+- name: Loops concept
+  hosts: web
+  become: yes
+  tasks:
+    - name: Prinint list of names using Loops
+      ansible.builtin.debug:
+        msg: "Hello mother fucker {{ item }}
+      loops:
+       - chat gpt
+       - gemini
+       - co-pilot
+       - deepseek
