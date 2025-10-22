@@ -10,3 +10,10 @@
       - gemini
       - copilot
       - deepseek
+    - name: Installing packages
+      ansible.builtin.package:
+       msg: " installing packages { item }"
+      loop:
+      - nginx
+      - mysql
+      
